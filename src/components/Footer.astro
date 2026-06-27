@@ -1,0 +1,47 @@
+---
+const currentYear = new Date().getFullYear()
+---
+
+<footer class="bg-foreground text-white mt-auto">
+  <div class="max-w-7xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+      <!-- Logo & tagline -->
+      <div>
+        <p class="font-heading text-2xl font-bold text-accent mb-2">Bamzuk</p>
+        <p class="text-sm text-white/60 leading-relaxed">
+          Seleccionamos oportunidades de regalar.<br />
+          Recomendaciones honestas, sin coste adicional para ti.
+        </p>
+      </div>
+      <!-- Legal links -->
+      <div>
+        <h3 class="font-semibold text-white/80 mb-3 text-sm uppercase tracking-wider">Legal</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/privacidad" class="text-white/60 hover:text-white transition-colors">Política de Privacidad y Cookies</a></li>
+          <li><a href="/impressum" class="text-white/60 hover:text-white transition-colors">Impressum</a></li>
+        </ul>
+      </div>
+      <!-- Navigation links -->
+      <div>
+        <h3 class="font-semibold text-white/80 mb-3 text-sm uppercase tracking-wider">Navegación</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/" class="text-white/60 hover:text-white transition-colors">Início</a></li>
+          <li><a href="/quienes-somos" class="text-white/60 hover:text-white transition-colors">Quiénes Somos</a></li>
+          <li><a href="/blog" class="text-white/60 hover:text-white transition-colors">Blog</a></li>
+          <li><a href="/contactanos" class="text-white/60 hover:text-white transition-colors">Contáctanos</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Amazon affiliate disclaimer -->
+    <div class="border border-accent/30 bg-accent/5 rounded-lg p-4 mb-8">
+      <p class="text-xs text-white/70 leading-relaxed">
+        <strong class="text-white/90">Nota importante:</strong> Bamzuk es un sitio de recomendaciones y participa en el Programa de Afiliados de Amazon. No vendemos productos directamente. Cuando haces clic en nuestros enlaces y compras en Amazon, podemos recibir una pequeña comisión, sin ningún coste adicional para ti.
+      </p>
+    </div>
+
+    <div class="border-t border-white/10 pt-6 text-center text-xs text-white/40">
+      © {currentYear} Bamzuk. Todos los derechos reservados.
+    </div>
+  </div>
+</footer>
