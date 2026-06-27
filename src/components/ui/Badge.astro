@@ -1,0 +1,17 @@
+---
+interface Props {
+  label: string
+  variant?: 'default' | 'muted'
+}
+
+const { label, variant = 'default' } = Astro.props
+
+const variants = {
+  default: 'bg-accent-subtle text-accent',
+  muted: 'bg-border text-muted',
+}
+
+const classes = `inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${variants[variant]}`
+---
+
+<span class={classes}>{label}</span>
