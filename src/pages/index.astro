@@ -1,77 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Button from '../components/ui/Button.astro'
-import Badge from '../components/ui/Badge.astro'
-import SectionTitle from '../components/ui/SectionTitle.astro'
-import ProductCard from '../components/ui/ProductCard.astro'
+import HeroSection from '../components/sections/HeroSection.astro'
+import BrandsSection from '../components/sections/BrandsSection.astro'
+import BenefitsSection from '../components/sections/BenefitsSection.astro'
+import AssistanceSection from '../components/sections/AssistanceSection.astro'
+import FeaturedSection from '../components/sections/FeaturedSection.astro'
 ---
 
-<Layout title="Bamzuk — Regalos con sentido">
-  <div class="max-w-7xl mx-auto px-6 py-16 space-y-16">
-
-    <!-- SectionTitle -->
-    <SectionTitle
-      title="Componentes UI — Paso 3"
-      subtitle="Verificación de Button, Badge, SectionTitle y ProductCard"
-      align="center"
-    />
-
-    <!-- Buttons -->
-    <section class="space-y-4">
-      <SectionTitle title="Buttons" as="h3" />
-      <div class="flex flex-wrap gap-4">
-        <Button variant="primary">Primary</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="ghost">Ghost</Button>
-        <Button variant="primary" size="sm">Small</Button>
-        <Button variant="primary" size="lg">Large</Button>
-        <Button href="/blog" variant="primary">Con href (link)</Button>
-      </div>
-    </section>
-
-    <!-- Badges -->
-    <section class="space-y-4">
-      <SectionTitle title="Badges" as="h3" />
-      <div class="flex flex-wrap gap-3">
-        <Badge label="Regalos" />
-        <Badge label="Por Destinatario" />
-        <Badge label="Muted" variant="muted" />
-      </div>
-    </section>
-
-    <!-- ProductCards -->
-    <section>
-      <SectionTitle
-        title="Ideas de Regalos"
-        subtitle="Seleccionados con cuidado por el equipo de Bamzuk"
-      />
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <ProductCard
-          image="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&auto=format&fit=crop"
-          imageAlt="Set de Papelería Harry Potter"
-          badge="Regalos Geeks"
-          title="Set Papelería Harry Potter"
-          description="Una colección mágica de útiles de escritorio inspirados en el mundo de Harry Potter. Perfecto para fans de todas las edades que quieren llevar la magia a su día a día."
-          href="/productos/set-papeleria-harry-potter"
-        />
-        <ProductCard
-          image="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop"
-          imageAlt="Sacacorchos Eléctrico"
-          badge="Regalos Tecnológicos"
-          title="Sacacorchos Eléctrico 6 en 1"
-          description="Abre botellas de vino sin esfuerzo con este elegante sacacorchos eléctrico recargable. Incluye accesorios para servir y conservar el vino."
-          href="/productos/sacacorchos-electrico"
-        />
-        <ProductCard
-          image="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&auto=format&fit=crop"
-          imageAlt="Lámpara Luna"
-          badge="Para Casa y Decoración"
-          title="Lámpara Luna"
-          description="Una reproducción tridimensional de la luna con luz LED cálida. Crea un ambiente íntimo y especial en cualquier habitación."
-          href="/productos/lampara-luna"
-        />
-      </div>
-    </section>
-
-  </div>
+<Layout title="Bamzuk — Regalos con sentido, seleccionados para ti">
+  <HeroSection />
+  <BrandsSection />
+  <BenefitsSection />
+  <AssistanceSection />
+  <FeaturedSection />
 </Layout>

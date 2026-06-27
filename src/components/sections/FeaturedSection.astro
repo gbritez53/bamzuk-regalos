@@ -1,0 +1,27 @@
+---
+import SectionTitle from '../ui/SectionTitle.astro'
+import ProductCard from '../ui/ProductCard.astro'
+import { featuredProducts } from '../../data/featured-products'
+---
+
+<section id="destacados" class="bg-background py-16 md:py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <SectionTitle
+      title="Ideas de Regalos"
+      subtitle="Seleccionados con cuidado por el equipo de Bamzuk"
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {featuredProducts.map(product => (
+        <ProductCard
+          image={product.image}
+          imageAlt={product.imageAlt}
+          badge={product.badge}
+          title={product.title}
+          description={product.description}
+          href={product.href}
+        />
+      ))}
+    </div>
+  </div>
+</section>

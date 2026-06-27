@@ -1,0 +1,37 @@
+---
+const brands = [
+  { name: 'Amazon', slug: 'amazon' },
+  { name: 'Zara Home', slug: 'zara-home' },
+  { name: 'FNAC', slug: 'fnac' },
+  { name: 'El Corte Inglés', slug: 'el-corte-ingles' },
+  { name: 'Etsy', slug: 'etsy' },
+  { name: 'MediaMarkt', slug: 'mediamarkt' },
+]
+---
+
+<section class="bg-surface border-y border-border py-10 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 mb-6 text-center">
+    <p class="text-xs font-semibold text-muted uppercase tracking-widest">Marcas con las que Trabajamos</p>
+  </div>
+
+  <div class="relative">
+    <div class="flex animate-marquee gap-12 whitespace-nowrap">
+      <!-- First copy -->
+      {brands.map(brand => (
+        <div class="shrink-0 flex items-center justify-center px-6">
+          <span class="font-heading text-xl font-bold text-foreground/30 hover:text-foreground/60 transition-colors select-none">
+            {brand.name}
+          </span>
+        </div>
+      ))}
+      <!-- Second copy (for seamless loop) -->
+      {brands.map(brand => (
+        <div class="shrink-0 flex items-center justify-center px-6" aria-hidden="true">
+          <span class="font-heading text-xl font-bold text-foreground/30 hover:text-foreground/60 transition-colors select-none">
+            {brand.name}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
