@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro'
+import ProductCard from '../components/ui/ProductCard.astro'
+
+interface BlogPost {
+  title: string
+  excerpt: string
+  badge: string
+  image: string
+  imageAlt: string
+  href: string
+}
+
+const posts: BlogPost[] = [
+  {
+    title: 'Cómo elegir el regalo perfecto (sin arruinarte)',
+    excerpt: 'Guía práctica para acertar con el regalo en cualquier ocasión: presupuesto, personalidad del destinatario y los errores más comunes que todos cometemos.',
+    badge: 'Guías',
+    image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&auto=format&fit=crop',
+    imageAlt: 'Cajas de regalo coloridas',
+    href: '/blog/como-elegir-el-regalo-perfecto',
+  },
+  {
+    title: 'Los 10 regalos más originales de Amazon este año',
+    excerpt: 'Hemos revisado miles de productos para traerte los más sorprendentes, prácticos y con mejor relación calidad-precio disponibles ahora mismo.',
+    badge: 'Listas',
+    image: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&auto=format&fit=crop',
+    imageAlt: 'Paquete de Amazon con lazo',
+    href: '/blog/10-regalos-mas-originales-amazon',
+  },
+  {
+    title: 'Guía definitiva para personas difíciles de contentar',
+    excerpt: '¿Conocés a alguien que ya tiene todo? Esta guía es para vos. Ideas creativas, personalizadas y que sorprenden incluso a los más exigentes.',
+    badge: 'Guías',
+    image: 'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800&auto=format&fit=crop',
+    imageAlt: 'Persona pensativa eligiendo un regalo',
+    href: '/blog/guia-personas-dificiles-de-contentar',
+  },
+]
+---
+
+<Layout title="Blog — Bamzuk">
+
+  <!-- Banner -->
+  <section class="bg-background py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="font-heading text-4xl md:text-5xl font-bold text-foreground leading-tight">
+        Blog de Bamzuk
+      </h1>
+      <p class="mt-4 text-lg text-muted max-w-2xl mx-auto leading-relaxed">
+        Guías, listas y consejos para que nunca más te quedes sin ideas para regalar.
+      </p>
+    </div>
+  </section>
+
+  <!-- Posts grid -->
+  <section class="bg-background py-12 pb-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {posts.map(post => (
+          <ProductCard
+            image={post.image}
+            imageAlt={post.imageAlt}
+            badge={post.badge}
+            title={post.title}
+            description={post.excerpt}
+            href={post.href}
+          />
+        ))}
+      </div>
+      <p class="mt-12 text-center text-sm text-muted">
+        Próximamente más artículos. ¡Volvé pronto!
+      </p>
+    </div>
+  </section>
+
+</Layout>

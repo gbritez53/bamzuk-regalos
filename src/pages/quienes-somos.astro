@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Button from '../components/ui/Button.astro'
+import SectionTitle from '../components/ui/SectionTitle.astro'
+
+const values = [
+  {
+    title: 'Honestidad',
+    description: 'Solo recomendamos productos que realmente creemos que valen la pena. Sin patrocinios ocultos ni relleno.',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>`,
+  },
+  {
+    title: 'Variedad',
+    description: 'Más de 70 categorías para que siempre encuentres el regalo perfecto, sin importar la ocasión o el destinatario.',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>`,
+  },
+  {
+    title: 'Ahorro de tiempo',
+    description: 'Curada selección de los mejores regalos para que no pierdas horas buscando. Todo en un solo lugar.',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+  },
+]
+---
+
+<Layout title="Quiénes Somos — Bamzuk">
+
+  <!-- Banner -->
+  <section class="bg-background py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="font-heading text-4xl md:text-5xl font-bold text-foreground leading-tight">
+        Quiénes Somos
+      </h1>
+      <p class="mt-4 text-lg text-muted max-w-2xl mx-auto leading-relaxed">
+        Somos un equipo apasionado por el arte de regalar bien. En Bamzuk creemos que cada regalo es una oportunidad de conectar con las personas que queremos.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="bg-surface py-16">
+    <div class="max-w-4xl mx-auto px-6 space-y-6">
+      <SectionTitle title="Nuestra misión" />
+      <p class="text-base text-muted leading-relaxed">
+        Bamzuk nació con una idea simple: hacer que regalar sea fácil, honesto e inspirador. No somos una tienda — somos un equipo de recomendadores. Buscamos, probamos (virtualmente) y seleccionamos los artículos más originales, prácticos y entrañables disponibles en Amazon.
+      </p>
+      <p class="text-base text-muted leading-relaxed">
+        Participamos en el <strong class="text-foreground">Programa de Afiliados de Amazon</strong>, lo que significa que cuando hacés clic en nuestros enlaces y comprás, podemos recibir una pequeña comisión — sin ningún coste adicional para vos. Esa comisión nos permite seguir manteniendo y mejorando Bamzuk.
+      </p>
+      <p class="text-base text-muted leading-relaxed">
+        Nuestra selección es siempre independiente: la comisión no influye en qué recomendamos. Si está en Bamzuk, es porque lo consideramos un buen regalo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="bg-background py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <SectionTitle
+        title="Nuestros valores"
+        subtitle="Los principios que guían cada recomendación"
+        align="center"
+      />
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {values.map(value => (
+          <div class="bg-surface rounded-card shadow-card p-6 flex flex-col gap-3">
+            <div class="w-11 h-11 rounded-lg bg-accent-subtle flex items-center justify-center text-accent flex-shrink-0">
+              <Fragment set:html={value.icon} />
+            </div>
+            <h3 class="font-semibold text-foreground text-base">{value.title}</h3>
+            <p class="text-sm text-muted leading-relaxed">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-accent py-16">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-white">¿Tenés alguna pregunta?</h2>
+      <p class="mt-3 text-white/80 text-base">Escribinos, estamos para ayudarte a encontrar el regalo perfecto.</p>
+      <div class="mt-8">
+        <Button href="/contactanos" variant="secondary" size="lg" class="border-white text-white hover:bg-white hover:text-accent">
+          Contactanos
+        </Button>
+      </div>
+    </div>
+  </section>
+
+</Layout>
